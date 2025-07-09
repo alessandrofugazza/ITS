@@ -1,0 +1,39 @@
+body {
+    background-color: antiquewhite;
+    font-family: "Segoe UI", Tahoma, Geneva, sans-serif;
+    margin: 50px 200px;
+}
+
+#font-size-div {
+    display: flex;
+    align-items: start;
+    margin-bottom: 20px;
+    flex-direction: column;
+}
+
+button {
+    margin: 5px;
+    width: 100px;
+    height: 60px;
+}
+
+.classe-aggiunta-con-querySelector {
+    color: red;
+    font-weight: bold;
+}
+
+.classe-aggiunta-con-querySelector-all {
+    color: green;
+    font-weight: bold;
+}
+
+#box {
+    width: 100px;
+    height: 100px;
+    background-color: grey;
+    margin: 20px;
+}
+
+h3 {
+    margin-top: 50px;
+}

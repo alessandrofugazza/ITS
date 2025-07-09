@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>09-07-25</title>
+  </head>
+  <body>
+    <h1>Lezione 2 — DOM Manipulation</h1>
+    <div id="font-size-div">
+      <p>Dimensione carattere</p>
+      <div><button id="btn-diminuisci-font">-</button><button id="btn-aumenta-font">+</button></div>
+    </div>
+    <h3>1. Selezionare elementi</h3>
+    <ul>
+      <li><code>getElementById</code></li>
+      <li><code>getElementsByClassName</code></li>
+      <li><code>querySelector</code></li>
+      <li><code>querySelectorAll</code></li>
+      <li><code>getElementsByTagName</code></li>
+    </ul>
+    <div>
+      <button id="btn-cambia-paragrafo">Cambia paragrafo</button>
+      <button id="btn-cambia-paragrafi">Cambia paragrafi</button>
+      <button id="btn-aggiungi-classe">Aggiungi classe</button>
+      <button id="btn-aggiungi-classi">Aggiungi classi</button>
+      <button id="btn-seleziona-p">Seleziona tutti p</button>
+    </div>
+    <p id="paragrafo-1" class="classe-paragrafo">
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, natus tempore, et quas id doloribus magnam dolore
+      a ullam repellat quos eum, voluptatum minima ducimus maxime illo voluptate cupiditate expedita.
+    </p>
+    <p class="classe-paragrafo">
+      Adipisci vel quia dolores voluptatum ipsum maxime aperiam doloremque voluptas necessitatibus, nihil dolorem
+      tempora illum maiores alias obcaecati nesciunt eligendi, animi perspiciatis placeat? Consequuntur quos totam
+      soluta, magni maxime repellat!
+    </p>
+    <p class="classe-paragrafo">
+      In, ex! Obcaecati dicta quos neque perspiciatis exercitationem similique quasi enim aut illum repellendus omnis
+      ipsum nobis vero et mollitia eos quibusdam, molestiae repellat ut at, labore ducimus quod. Aliquid.
+    </p>
+    <p>
+      Vero nemo similique iure et. Itaque modi aperiam non officia nulla distinctio voluptatem, ex voluptatum voluptate
+      necessitatibus libero repellat ducimus laborum recusandae! Laudantium optio ipsum cumque est officia. Dolores,
+      maiores.
+    </p>
+    <h3>2. Cambiare stile</h3>
+    <code>.style</code>
+    <div style="margin-top: 10px">
+      <button id="btn-cambia-bg">Cambia background</button>
+      <button id="btn-cambia-border">Cambia border</button>
+    </div>
+    <div id="box"></div>
+    <h3>3. Creare e aggiungere elementi</h3>
+    <ul>
+      <li><code>createElement</code></li>
+      <li><code>appendChild</code></li>
+      <li><code>insertBefore</code></li>
+    </ul>
+    <div style="margin-top: 10px; display: flex">
+      <button id="btn-aggiungi-in-fondo">Aggiungi in fondo</button>
+      <button id="btn-aggiungi-all-inizio">Aggiungi all'inizio</button>
+    </div>
+    <h4>Lista già esistente</h4>
+    <ul id="lista-gia-esistente">
+      <li>Elemento già esistente</li>
+    </ul>
+    <script src="scripts/fontSize.js"></script>
+    <script src="scripts/selezionaElementi.js"></script>
+    <script src="scripts/cambiaStile.js"></script>
+    <script src="scripts/creaElementi.js"></script>
+  </body>
+</html>
