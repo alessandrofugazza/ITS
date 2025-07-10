@@ -1,0 +1,25 @@
+body {
+    background-color: antiquewhite;
+    font-family: "Segoe UI", Tahoma, Geneva, sans-serif;
+    margin: 50px 200px;
+}
+
+.red-text {
+    color: red;
+}
+
+.blue-text {
+    color: blue;
+}
+
+.green-text {
+    color: green;
+}
+
+.violet-text {
+    color: mediumslateblue
+}
+
+.my-strong {
+    font-weight: 500;
+}

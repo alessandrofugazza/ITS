@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>11-07-25</title>
+  </head>
+  <body>
+    <h1>Lezione 3 — Creare una pagina con JavaScript</h1>
+    <p>Ricreare il vostro progetto dinamicamente con JavaScript partendo da un HTML vuoto.</p>
+    <h2>Procedimento</h2>
+    <!-- <h3>Creare le classi CSS</h3>
+    <p>Non sarà possibile usare lo stile inline nell'HTML per stilizzare gli elementi.</p>
+    <p>Per ogni elemento che avrà del CSS, occorre creare una classe che verrà poi assegnata all'elemento tramite JS</p>
+
+    <p>Per ogni elemento che avrà del CSS, occorre creare una classe che verrà poi assegnata all'elemento tramite JS</p> -->
+    <hr />
+
+    <div>
+      <h3>1. Creare un tag HTML da aggiungere alla pagina</h3>
+      <p>
+        Per creare un tag HTML da aggiungere alla pagina, occorre usare il metodo <code>document.createElement()</code>.
+      </p>
+      <h4>Esempio — creare un paragrafo <code>&lt;p&gt;</code></h4>
+      <code
+        ><span class="red-text">const</span> <span class="blue-text">nuovoParagrafo</span> =
+        <span class="green-text">document.createElement</span><span class="violet-text">("p")</span>;</code
+      >
+      <ul>
+        <li><span class="red-text">const</span> è una parola chiave per dichiarare una variabile costante.</li>
+        <li><span class="blue-text">nuovoParagrafo</span> è il nome della variabile che conterrà il nuovo elemento.</li>
+        <li><span class="green-text">document.createElement</span> è il metodo che crea un nuovo elemento HTML.</li>
+        <li>
+          <span class="violet-text">("p")</span> è il tipo di elemento da creare, in questo caso un paragrafo.
+          <span class="my-strong">Notare i doppi apici attorno al nome dell'elemento</span>.
+        </li>
+      </ul>
+      <code>
+        <span class="blue-text">nuovoParagrafo</span>.<span class="green-text">textContent</span> =
+        <span class="violet-text">"Questo è il testo del nuovo paragrafo."</span>;
+      </code>
+      <ul>
+        <li><span class="blue-text">nuovoParagrafo</span> è la variabile che contiene il nuovo elemento creato.</li>
+        <li><span class="green-text">textContent</span> è una proprietà che imposta il testo del nuovo elemento.</li>
+        <li>
+          <span class="violet-text">"Questo è il testo del nuovo paragrafo."</span> è il testo che verrà visualizzato
+          nel paragrafo.
+        </li>
+      </ul>
+    </div>
+    <hr />
+    <div>
+      <h3>2. Stilizzare l'elemento creato</h3>
+      <p>Per stilizzare un elemento prima di aggiungerlo alla pagina occorre usare <code>classList.add()</code></p>
+      <p>Tra le parententesi si mette il nome di una classe CSS che abbiamo creato nel nostro CSS</p>
+      <h4>Esempio — aggiungere una classe al paragrafo creato</h4>
+      <code>
+        <span class="blue-text">nuovoParagrafo</span>.<span class="green-text">classList.add</span>(
+        <span class="violet-text">"mia-classe"</span>);
+      </code>
+    </div>
+    <hr />
+
+    <div>
+      <h3>3. Aggiungere l'elemento creato alla pagina</h3>
+      <p>Per aggiungere un elemento alla pagina occorre usare il metodo <code>appendChild()</code></p>
+      <p>Occorre <span class="my-strong">prima</span> però selezionare un elemento già esistente a cui aggiungerlo.</p>
+      <h4>Esempio — aggiungere un paragrafo a un <code>&lt;div&gt;</code></h4>
+      <p>Prima seleziono il <code>div</code> a cui aggiungere il paragrafo</p>
+      <code> const divGiaEsistente = document.getElementById("div-gia-esistente"); </code>
+      <p>Poi aggiungo effettivamente il paragrafo</p>
+      <code> divGiaEsistente.appendChild(nuovoParagrafo); </code>
+      <p>
+        <span class="my-strong">NOTA</span> per creare un <code>div</code> che contiene degli <code>p</code>, occorre:
+      </p>
+      <ol>
+        <li>Creare il <code>div</code> con <code>document.createElement("div")</code></li>
+        <li>Creare un <code>p</code> con <code>document.createElement("p")</code></li>
+        <li>Impostare il testo del <code>p</code> con <code>p.textContent = "Testo del paragrafo"</code></li>
+        <li>Eseguire i passaggi 2 e 3 per ogni <code>p</code> da aggiungere</li>
+        <li>Aggiungere il <code>div</code> alla pagina con <code>document.body.appendChild(div)</code></li>
+      </ol>
+    </div>
+
+    <script src="scripts/fontSize.js"></script>
+    <script src="scripts/selezionaElementi.js"></script>
+    <script src="scripts/cambiaStile.js"></script>
+    <script src="scripts/creaElementi.js"></script>
+  </body>
+</html>
