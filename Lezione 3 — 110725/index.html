@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="style.css" />
     <title>11-07-25</title>
   </head>
-  <body>
+  <body id="container">
     <h1>Lezione 3 — Creare una pagina con JavaScript</h1>
     <p>Ricreare il vostro progetto dinamicamente con JavaScript partendo da un HTML vuoto.</p>
     <h2>Procedimento</h2>
@@ -24,41 +24,49 @@
       </p>
       <h4>Esempio — creare un paragrafo <code>&lt;p&gt;</code></h4>
       <code
-        ><span class="red-text">const</span> <span class="blue-text">nuovoParagrafo</span> =
-        <span class="green-text">document.createElement</span><span class="violet-text">("p")</span>;</code
+        ><span>const</span> <span>nuovoParagrafo</span> = <span>document.createElement</span><span>("p")</span>;</code
       >
       <ul>
-        <li><span class="red-text">const</span> è una parola chiave per dichiarare una variabile costante.</li>
-        <li><span class="blue-text">nuovoParagrafo</span> è il nome della variabile che conterrà il nuovo elemento.</li>
-        <li><span class="green-text">document.createElement</span> è il metodo che crea un nuovo elemento HTML.</li>
+        <li><code>const</code> è una parola chiave per dichiarare una variabile costante.</li>
+        <li><code>nuovoParagrafo</code> è il nome della variabile che conterrà il nuovo elemento.</li>
+        <li><code>document.createElement</code> è il metodo che crea un nuovo elemento HTML.</li>
         <li>
-          <span class="violet-text">("p")</span> è il tipo di elemento da creare, in questo caso un paragrafo.
+          <code>("p")</code> è il tipo di elemento da creare, in questo caso un paragrafo.
           <span class="my-strong">Notare i doppi apici attorno al nome dell'elemento</span>.
         </li>
       </ul>
       <code>
-        <span class="blue-text">nuovoParagrafo</span>.<span class="green-text">textContent</span> =
-        <span class="violet-text">"Questo è il testo del nuovo paragrafo."</span>;
+        <span>nuovoParagrafo</span>.<span>textContent</span> = <span>"Questo è il testo del nuovo paragrafo."</span>;
       </code>
       <ul>
-        <li><span class="blue-text">nuovoParagrafo</span> è la variabile che contiene il nuovo elemento creato.</li>
-        <li><span class="green-text">textContent</span> è una proprietà che imposta il testo del nuovo elemento.</li>
-        <li>
-          <span class="violet-text">"Questo è il testo del nuovo paragrafo."</span> è il testo che verrà visualizzato
-          nel paragrafo.
-        </li>
+        <li><code>nuovoParagrafo</code> è la variabile che contiene il nuovo elemento creato.</li>
+        <li><code>textContent</code> è una proprietà che imposta il testo del nuovo elemento.</li>
+        <li><code>"Questo è il testo del nuovo paragrafo."</code> è il testo che verrà visualizzato nel paragrafo.</li>
       </ul>
     </div>
     <hr />
     <div>
       <h3>2. Stilizzare l'elemento creato</h3>
-      <p>Per stilizzare un elemento prima di aggiungerlo alla pagina occorre usare <code>classList.add()</code></p>
-      <p>Tra le parententesi si mette il nome di una classe CSS che abbiamo creato nel nostro CSS</p>
-      <h4>Esempio — aggiungere una classe al paragrafo creato</h4>
-      <code>
-        <span class="blue-text">nuovoParagrafo</span>.<span class="green-text">classList.add</span>(
-        <span class="violet-text">"mia-classe"</span>);
-      </code>
+      <p>Per stilizzare un elemento prima di aggiungerlo alla pagina ci sono due modi:</p>
+      <ul>
+        <li>Modificare il suo stile direttamente (esempio: cambiare il colore o il font-size)</li>
+        <li>Aggiungere una classe definita precedentemente in CSS</li>
+      </ul>
+
+      <h4>Esempio 1 — aggiungere una classe al paragrafo creato</h4>
+      <p>Usare <code>classList.add()</code></p>
+      <p>Tra le parententesi si mette il nome di una classe CSS che abbiamo creato nel nostro CSS.</p>
+      <code> <span>nuovoParagrafo</span>.<span>classList.add</span>(<span>"mia-classe"</span>); </code>
+      <h4>Esempio 2 — modificare direttamente lo stile del paragrafo creato</h4>
+      <p>Usare <code>.style</code></p>
+      <p>Prima di <code>.style</code> si mette la variabile che contiene l'elemento appena creato.</p>
+      <p>
+        Dopo <code>.style</code> si mette la proprietà CSS che si intende modificare.
+        <span class="my-strong">NOTA</span> le proprietà CSS quando usate in JS hanno lo stesso nome ma sono scritte in
+        modo leggermente diverso: ad esempio <code>background-color</code> di CSS diventa
+        <code>backgroundColor</code> in JS.
+      </p>
+      <code> <span>nuovoParagrafo</span>.<span>style.color</span> = "red"; </code>
     </div>
     <hr />
 
@@ -75,17 +83,31 @@
         <span class="my-strong">NOTA</span> per creare un <code>div</code> che contiene degli <code>p</code>, occorre:
       </p>
       <ol>
-        <li>Creare il <code>div</code> con <code>document.createElement("div")</code></li>
+        <li>
+          Creare il <code>div</code> con <code>document.createElement("div")</code> e salvarlo in una
+          <span class="my-strong">nuova</span> variabile
+        </li>
         <li>Creare un <code>p</code> con <code>document.createElement("p")</code></li>
-        <li>Impostare il testo del <code>p</code> con <code>p.textContent = "Testo del paragrafo"</code></li>
-        <li>Eseguire i passaggi 2 e 3 per ogni <code>p</code> da aggiungere</li>
+        e salvarlo in una
+        <span class="my-strong">nuova</span>
+        variabile (quindi dichiarandola con
+        <code>const</code
+        >)
+        <li>
+          Impostare il testo del nuovo <code>p</code> con
+          <code>variabileCheContieneP.textContent = "Testo del paragrafo"</code>
+        </li>
+        <li>
+          Aggiungere il <code>p</code> al <code>div</code> creato al passaggio 1 usando
+          <code>variabileCheContieneIlDiv.appendChild(variabileCheContieneP);</code>
+        </li>
+        <li>
+          Eseguire i passaggi 2, 3 e 4 per ogni <code>p</code> da aggiungere (<span class="my-strong">NOTA</span>
+          dichiarare una nuova variabile per ogni <code>p</code> da aggiungere)
+        </li>
         <li>Aggiungere il <code>div</code> alla pagina con <code>document.body.appendChild(div)</code></li>
       </ol>
     </div>
-
-    <script src="scripts/fontSize.js"></script>
-    <script src="scripts/selezionaElementi.js"></script>
-    <script src="scripts/cambiaStile.js"></script>
-    <script src="scripts/creaElementi.js"></script>
+    <!-- <script src="scripts/scriptEsempio.js"></script> -->
   </body>
 </html>

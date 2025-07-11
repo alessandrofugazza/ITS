@@ -1,12 +1,10 @@
 body {
-    background-color: antiquewhite;
+    background-color: rgb(234, 223, 211);
     font-family: "Segoe UI", Tahoma, Geneva, sans-serif;
     margin: 50px 200px;
 }
 
-.red-text {
-    color: red;
-}
+
 
 .blue-text {
     color: blue;
@@ -22,4 +20,9 @@ body {
 
 .my-strong {
     font-weight: 500;
+}
+
+hr {
+    margin-top: 25px;
+    margin-bottom: 40px;
 }
